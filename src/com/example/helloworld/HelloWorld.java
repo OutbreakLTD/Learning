@@ -59,6 +59,7 @@ public class HelloWorld {
         }
         else if(ex==4){
             System.out.println("Досвидания!");
+            System.out.println("Bue");
             return false;
         }
             return true;
