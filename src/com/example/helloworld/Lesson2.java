@@ -6,12 +6,17 @@ package com.example.helloworld;
 public class Lesson2 {
     public static void main(String[] args) {
         // Создаём объект
-        Mecha o1 = new Mecha();
+        Mecha o1 = new Mecha(1,2,"Robocop");
         o1.status(true); // Активируем
         o1.coord();
 
-        Robocount rc1= new Robocount();
-        rc1.prNum(5);
+        Robocount rc1= new Robocount("Рекурсия");
+        rc1.status(true);
+        rc1.prNum(10);
+        rc1.movement(13,1897);
+        rc1.status(false);
+
+
 
         Jet j1 = new Jet();
         j1.status(true);
@@ -22,8 +27,8 @@ public class Lesson2 {
 
 /*
     разработать приложение, решающее следующую задачу:
-        приложение должно быть консольным (без графического интерфейса)
-        в приложении должны присутствовать базовый класс и минимум 2 наследуемых от него класса
+        приложение должно быть консольным (без графического интерфейса) +
+        в приложении должны присутствовать базовый класс и минимум 2 наследуемых от него класса +
         реализовать в приложении:
         обращение к функции базового класса из дочернего
         перегрузку методов базового класса

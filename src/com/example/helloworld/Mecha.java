@@ -7,7 +7,7 @@ public class Mecha {
     public String name;
     public double x;
     public double y;
-    boolean turn;
+    public boolean turn;
 
     public void status (boolean a)
     {
@@ -29,6 +29,9 @@ public class Mecha {
         {
             System.out.println(name + " деактивирован и не может двигаться");
         }
+    }
+    public void movement(double a, double b){
+        move(a,b);
     }
 
     protected void coord (){
