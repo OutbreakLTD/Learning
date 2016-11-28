@@ -16,11 +16,14 @@ public class Robocount extends Mecha {
             System.out.print(i + " ");
         }
         System.out.println();
-        if(curMax<max){
-           prNum(curMax+1,max);
+        if (curMax < max) {
+            prNum(curMax + 1, max);
         }
-
-
+    }
+    public void countStatus()
+    {
+        System.out.println("Вывод окончен");
+        status(false);
     }
     public Robocount (String name){
         this.name=name;

@@ -14,7 +14,7 @@ public class Lesson2 {
         rc1.status(true);
         rc1.prNum(10);
         rc1.movement(13,1897);
-        rc1.status(false);
+        rc1.countStatus();
 
 
 
