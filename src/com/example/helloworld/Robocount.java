@@ -1,9 +1,5 @@
 package com.example.helloworld;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
-
-import javax.sound.midi.Soundbank;
-
 /**
  * Created by kmordvickij on 25.11.2016.
  */
