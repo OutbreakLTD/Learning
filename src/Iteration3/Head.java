@@ -3,5 +3,8 @@ package Iteration3;
 /**
  * Created by kmordvickij on 02.12.2016.
  */
-public class Head {
+public class Head extends Material  {
+    Head (){
+        getMaterial();
+    }
 }

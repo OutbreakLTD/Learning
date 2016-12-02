@@ -12,7 +12,7 @@ public class Robot {
     public Head h;
 
     public void weight(){
-      System.out.print(lArm.material + lArm.weight + "\n"+ rArm.material+ rArm.weight);
+      System.out.print(lArm.material + lArm.weight + "\n"+ rArm.material+ rArm.weight + "\n"+b.material+b.weight+ "\n"+h.material+h.weight + "\n"+ lLeg.material + lLeg.weight + "\n"+ rLeg.material+ rLeg.weight   );
     }
 
     Robot (){
