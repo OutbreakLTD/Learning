@@ -12,39 +12,40 @@ public class Robot {
     public Head h;
     int w;
 
-    public int Weight(){
+    public int Weight() {
 
-        w = h.weight+b.weight+lArm.weight+rArm.weight+lLeg.weight+rLeg.weight;
+        w = h.weight + b.weight + lArm.weight + rArm.weight + lLeg.weight + rLeg.weight;
         return w;
     }
 
-    public void Print(){
-        System.out.println("Общий вес робота: "+Weight());
-      System.out.println(lArm.fullname +lArm.material + lArm.weight + "\n"+ rArm.fullname +rArm.material+ rArm.weight + "\n"+b.fullname+b.material+b.weight+ "\n"+h.fullname+h.material+h.weight + "\n"+lLeg.fullname+ lLeg.material + lLeg.weight + "\n"+ rLeg.fullname+ rLeg.material+ rLeg.weight   );
+    public void Print() {
+        System.out.println("Общий вес робота: " + Weight());
+        System.out.println(lArm.fullname + lArm.material + lArm.weight + "\n" + rArm.fullname + rArm.material + rArm.weight + "\n" + b.fullname + b.material + b.weight + "\n" + h.fullname + h.material + h.weight + "\n" + lLeg.fullname + lLeg.material + lLeg.weight + "\n" + rLeg.fullname + rLeg.material + rLeg.weight);
     }
 
-    public void rePartition(){
-        if(w>0 ){
-        w=w/2;
-System.out.println("Общий вес снижен. Новый общий вес: "+w);
-            rePartition();
-        }
-        else{
+    public void rePartition(int w) {
+
+        if (w > 0) {
+            w = w / 2;
+            System.out.println("Общий вес снижен. Новый общий вес: " + w);
+            rePartition(w);
+        } else {
             System.out.println("Дальше снижать нельзя");
 
         }
 
     }
 
-    Robot (){
+    Robot() {
         lArm = new Arm();
         rArm = new Arm();
         rLeg = new Leg();
         lLeg = new Leg();
         b = new Body();
         h = new Head();
-    };
+    }
 
+    ;
 
 
 }
