@@ -10,9 +10,30 @@ public class Robot {
     public Leg rLeg;
     public Body b;
     public Head h;
+    int w;
 
-    public void weight(){
-      System.out.print(lArm.material + lArm.weight + "\n"+ rArm.material+ rArm.weight + "\n"+b.material+b.weight+ "\n"+h.material+h.weight + "\n"+ lLeg.material + lLeg.weight + "\n"+ rLeg.material+ rLeg.weight   );
+    public int Weight(){
+
+        w = h.weight+b.weight+lArm.weight+rArm.weight+lLeg.weight+rLeg.weight;
+        return w;
+    }
+
+    public void Print(){
+        System.out.println("Общий вес робота: "+Weight());
+      System.out.println(lArm.fullname +lArm.material + lArm.weight + "\n"+ rArm.fullname +rArm.material+ rArm.weight + "\n"+b.fullname+b.material+b.weight+ "\n"+h.fullname+h.material+h.weight + "\n"+lLeg.fullname+ lLeg.material + lLeg.weight + "\n"+ rLeg.fullname+ rLeg.material+ rLeg.weight   );
+    }
+
+    public void rePartition(){
+        if(w>0 ){
+        w=w/2;
+System.out.println("Общий вес снижен. Новый общий вес: "+w);
+            rePartition();
+        }
+        else{
+            System.out.println("Дальше снижать нельзя");
+
+        }
+
     }
 
     Robot (){
