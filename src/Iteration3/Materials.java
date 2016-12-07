@@ -20,10 +20,11 @@ public enum Materials {
         this.maxWeight = maxWeight;
         this.displayName = displayName;
     }
-    int mWeight(){
+    public int mWeight(){
 
         return new Random().nextInt((maxWeight-minWeight)+1)+minWeight;
     }
+
 
     @Override
     public String toString() {

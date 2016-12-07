@@ -14,7 +14,7 @@ public class Robot {
 
     public int Weight() {
 
-        w = h.weight + b.weight + lArm.weight + rArm.weight + lLeg.weight + rLeg.weight;
+        w = h.materials.mWeight() + b.materials.mWeight() + lArm.materials.mWeight() + rArm.materials.mWeight() + lLeg.materials.mWeight() + rLeg.materials.mWeight();
         return w;
     }
 
