@@ -20,7 +20,13 @@ public class Robot {
 
     public void Print() {
         System.out.println("Общий вес робота: " + Weight());
-        System.out.println(lArm.fullname + lArm.material + lArm.weight + "\n" + rArm.fullname + rArm.material + rArm.weight + "\n" + b.fullname + b.material + b.weight + "\n" + h.fullname + h.material + h.weight + "\n" + lLeg.fullname + lLeg.material + lLeg.weight + "\n" + rLeg.fullname + rLeg.material + rLeg.weight);
+        System.out.println(lArm.toString());
+        System.out.println(rArm.toString());
+        System.out.println(b.toString());
+        System.out.println(h.toString() );
+        System.out.println(lLeg.toString());
+        System.out.println(rLeg.toString());
+
     }
 
     public void rePartition(int w) {
@@ -39,10 +45,12 @@ public class Robot {
     Robot() {
         lArm = new Arm();
         rArm = new Arm();
-        rLeg = new Leg();
-        lLeg = new Leg();
         b = new Body();
         h = new Head();
+        lLeg = new Leg();
+        rLeg = new Leg();
+
+
     }
 
     ;

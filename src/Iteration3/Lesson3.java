@@ -8,5 +8,6 @@ public class Lesson3 {
         Robot Chappy = new Robot();
         Chappy.Print();
         Chappy.rePartition(Chappy.w);
+
     }
 }
