@@ -7,6 +7,7 @@ import java.util.Random;
  */
 public class Body extends BodyParts {
 
+
     Body (){
         int pos = new Random().nextInt(Materials.values().length);
         materials = Materials.values()[pos];

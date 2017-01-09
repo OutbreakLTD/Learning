@@ -15,8 +15,5 @@ public class BodyParts {
         return this.part+" "+materials.toString()+" "+materials.mWeight();
     }
 
-    BodyParts(){
-
-    }
 
 }
