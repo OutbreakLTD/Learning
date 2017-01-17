@@ -3,45 +3,48 @@ package Iteration4;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 /**
  * Created by kmordvickij on 06.12.2016.
  */
 public class Lesson4 {
     public static void main(String[] args) throws IOException {
-        System.out.print("Введите первое целое число: ");
+
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        int a = 0;
-        int b = 0;
-        boolean fn = false;
-        do {
-            try {
-                a = Integer.parseInt(reader.readLine());
-                fn = false;
-            } catch (NumberFormatException e) {
-                System.out.println("Не похоже на целое число, попробуйте еще раз ввести первое число: ");
-                fn = true;
-            }
-        } while (fn == true);
-        System.out.print("Введите второе целое число: ");
-        do {
-            try {
-                b = Integer.parseInt(reader.readLine());
-                fn = false;
-            } catch (NumberFormatException e) {
-                System.out.println("Не похоже на целое число, попробуйте еще раз ввести второе число: ");
-                fn = true;
-            }
-        } while (fn == true);
+        ArrayList<Integer> arguments = new ArrayList<>();
+        boolean falsenumber = false;
 
-        System.out.println(new Addition().calculate(a, b));
-        System.out.println(new Multiplication().calculate(a, b));
-        System.out.println(new Substraction().calculate(a, b));
-        new Division().calculate(a, b);
+        for(int i= 1; i<3;i++)
+        {
 
-        new RecD().calculate(a, b);
+
+            do {
+                System.out.print("Введите  число #" +i);
+                try {
+                    arguments.add(Integer.parseInt(reader.readLine()));
+                    falsenumber = false;
+                } catch (NumberFormatException e) {
+                    System.out.println("Не похоже на целое число, попробуйте еще раз ввести первое число: ");
+                    falsenumber = true;
+                }
+            } while (falsenumber == true);
+        }
+
+        ArrayList<Calculate> calculateObj = new ArrayList<Calculate>();
+        calculateObj.add(new Addition());
+        calculateObj.add(new Multiplication());
+        calculateObj.add(new Substraction());
+        calculateObj.add(new Division());
+        calculateObj.add(new RecD());
+
+        for(int i = 0; i<calculateObj.size();i++)
+        {
+            System.out.println(calculateObj.get(i).calculate(arguments.get(0), arguments.get(1)));
+        }
+
     }
 
 
