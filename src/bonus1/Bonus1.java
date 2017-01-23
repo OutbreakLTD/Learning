@@ -15,7 +15,7 @@ public class Bonus1 {
             System.out.println("Корзина #" + j);
             for (int i = 0; i < baskets.get(j - 1).size(); i++) {
                 baskeWeight += baskets.get(j - 1).get(i).getWeight();
-                System.out.println("\t" + baskets.get(j - 1).get(i).getType() + " :" + baskets.get(j - 1).get(i).getName() + ", Вес: " + baskets.get(j - 1).get(i).getWeight() + " " + getOptions((Products) baskets.get(j - 1).get(i)));
+                System.out.println("\t" + baskets.get(j - 1).get(i).getType() + " :" + baskets.get(j - 1).get(i).getName() + ", Вес: " + baskets.get(j - 1).get(i).getWeight() + " " + getOptions(baskets.get(j - 1).get(i)));
                 ;
             }
             allBasketWeight += baskeWeight;
@@ -24,26 +24,33 @@ public class Bonus1 {
         System.out.println("Общий вес всех корзин: " + allBasketWeight);
         recDev((double) allBasketWeight);
 
+
     }
 
     private static void newBaskets(ArrayList<ArrayList<Stuff>> arr) {
-        Random randomizer = new Random();
-        int randomNumber = randomizer.nextInt(4) + 1;
-        for (int i = 0; i <= randomNumber; i++) {
+
+        for (int i = 0; i < new Random().nextInt(5) + 1; i++) {
             ArrayList<Stuff> prod = new ArrayList<Stuff>();
 
-            arr.add(prod);
-            for (int j = 0; j < 5; j++) {
+            for (int j = 0; j <= new Random().nextInt(4) + 1; j++) {
 
-                int randomNumber1 = randomizer.nextInt(4);
 
-                prod.add(Products.values()[randomNumber1]);
+                prod.add(Products.values()[new Random().nextInt(2)]);
             }
+
+            for (int j = 0; j <= new Random().nextInt(4) + 1; j++) {
+
+
+                prod.add(Items.values()[new Random().nextInt(2)]);
+            }
+
+            arr.add(prod);
         }
 
     }
 
-    public static String getOptions(Products products) {
+    public static String getOptions(Stuff products) {
+
         if (products.equals(Products.SODA)) {
             String color = Options.COLOR.getoName() + Specification.getColor();
             String smell = Options.SMELL.getoName() + Specification.getSmell();
@@ -53,9 +60,9 @@ public class Bonus1 {
 
             return Options.FRESH.getoName() + getRandomBoolean() + " " + Options.CONDITION.getoName() + getRandomBoolean();
 
-        } else if (products.equals(Products.FLASHLIGHT)) {
+        } else if (products.equals(Items.FLASHLIGHT)) {
             return Options.LENS.getoName() + getRandomBoolean() + " " + Options.BATTERY.getoName() + getRandomBoolean();
-        } else if (products.equals(Products.ZIPPO)) {
+        } else if (products.equals(Items.ZIPPO)) {
             return Options.GAS.getoName() + getRandomBoolean() + " " + Options.BRAND.getoName() + getRandomBoolean();
         }
         return null;
