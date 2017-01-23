@@ -54,7 +54,7 @@ public class Bonus1 {
         if (products.equals(Products.SODA)) {
             String color = Options.COLOR.getoName() + Specification.getColor();
             String smell = Options.SMELL.getoName() + Specification.getSmell();
-            String taste = Options.TASTE.getoName() + Specification.getSmell();
+            String taste = Options.TASTE.getoName() + Specification.getTaste();
             return color + " " + taste + " " + smell;
         } else if (products.equals(Products.ORANGE)) {
 
